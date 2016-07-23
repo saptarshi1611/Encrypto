@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_7dca5d786bdb6f6445cf740ba1a367dba04249fb.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_8c7dbb52de249a7a51f89e982a03b6a89259f2db.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/libs/zxing/core.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cba0b93b0072105d808ef7a00a107a4eb97874e7">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/core_1187784928fcb3f7bfd7c960c896a12a70cc8b75.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_d61166efb58baf55406284e9e5f458dc6a68d0ed.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/libs/spongycastle/prov-1.51.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6755081df770180856ca48694b40cd34c2208128">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/prov-1.51.0.0_43bb993af3f20d9d8764aa652b38acc835460d5e.jar" />
+    </item>
+    <item
+        jar="/home/monti/Downloads/Android_Studio/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_4c80d9d2582e3b542123e63207a866653ac0ecf4.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/libs/spongycastle/core-1.51.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0f642963312ea0e615ad65f28adc5a5b3a2a0862">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/core-1.51.0.0_7b9b69f5641e0a81e576d920b8e7023ae679c8a7.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_7ab3bc24638748ef979747bfe4cf0073dcf08475.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_47fe154b5e47cd51cd454447a94605fb55078658.jar" />
+    </item>
+    <item
+        jar="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/libs/apache/commons-codec-1.10.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="/home/monti/Documents/PROJECTS/ANDROID/SecuredQR2/app/build/intermediates/pre-dexed/debug/commons-codec-1.10_e65a5e5fd29e56223661249a4ad8d4427c3d7e99.jar" />
+    </item>
+
+</items>

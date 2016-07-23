@@ -1,0 +1,9 @@
+#Android
+*.apk
+
+#Eclipse
+.project
+.settings
+.classpath
+.directory
+
