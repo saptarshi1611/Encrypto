@@ -12,7 +12,7 @@ import android.graphics.Paint;
 
 /**
  * creates greyscale image
- * @since 2.0
+ * @since 1.0
  */
 public class ImageToBW {
 
@@ -26,7 +26,7 @@ public class ImageToBW {
 		String bw=QRCode.filePath+"/BW.jpg";
 		ColorMatrix cm = new ColorMatrix();
 		cm.setSaturation(0);
-	    ColorMatrixColorFilter cmf = new ColorMatrixColorFilter(cm);
+	    	ColorMatrixColorFilter cmf = new ColorMatrixColorFilter(cm);
 		Bitmap bmp=BitmapFactory.decodeFile(src);					
 		int sw=bmp.getWidth(),sh=(int)bmp.getHeight();
 		Bitmap bmp1=Bitmap.createScaledBitmap(bmp,(int)(sw*.7),(int)(sh*.7),true);
@@ -34,7 +34,7 @@ public class ImageToBW {
 		Paint paint = new Paint();
 		paint.setColorFilter(cmf);
 		Canvas canvas = new Canvas(bmp2);
-	    canvas.drawBitmap(bmp2, 0, 0, paint);
+	    	canvas.drawBitmap(bmp2, 0, 0, paint);
 		FileOutputStream fp=new FileOutputStream(bw);				
 		bmp2.compress(Bitmap.CompressFormat.JPEG,7,fp);
 		fp.close();
