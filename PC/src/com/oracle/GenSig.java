@@ -18,7 +18,7 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 /**
 * Creates a detached digital signature along with the public key 
 * <p>
-* RSA encryption algorithm is used along with SHA-1
+* RSA encryption algorithm is used along with SHA-256
 * The keysize is 3072 bits
 * @since 1.0
 * @see java.security

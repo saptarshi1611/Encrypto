@@ -20,8 +20,7 @@ import securedqr.smit.edu.in.app.R;
  *if successful
  *else raises a Toast that displays the path to Log.txt
  */
-public class GenQR extends Activity implements Runnable,View.OnClickListener
-{		
+public class GenQR extends Activity implements Runnable,View.OnClickListener {
 	private static ProgressDialog dialog;
 	public static TextView tv;	
 	private Button bt;
@@ -30,8 +29,7 @@ public class GenQR extends Activity implements Runnable,View.OnClickListener
 	public static Exception except;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gen_qr);
 		tv=(TextView)findViewById(R.id.wfile);
@@ -40,37 +38,30 @@ public class GenQR extends Activity implements Runnable,View.OnClickListener
 	}
 
 	@Override
-	public void onClick(View v)
-	{
+	public void onClick(View v)	{
 		Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
         fileintent.setType("file/*");
-        try 
-        {
+        try {
             startActivityForResult(fileintent,PICKFILE_RESULT_CODE);            
         } 
-        catch (Exception e) 
-        {
-            Log.create_log(e, getApplicationContext());
+        catch (Exception e) {
+            Log.createLog(e, getApplicationContext());
         }	
 	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{		  
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		  switch(requestCode)
 		  {
 			  case PICKFILE_RESULT_CODE:
-			   if(resultCode==RESULT_OK)
-			   {
+			   if(resultCode==RESULT_OK) {
 				    f = data.getData().getPath();	
 				    File file=new File(f);
-		        	if(!file.exists())
-		        	{
+		        	if(!file.exists()) {
 		        		tv.setText("");
-		        		Log.create_log(new Exception("File not found"), getApplicationContext());
+		        		Log.createLog(new Exception("File not found"), getApplicationContext());
 		        	}
-		        	else
-		        	{
+		        	else {
 			        	tv.setText("");
 		        		dialog = ProgressDialog.show(GenQR.this, "Generating QRCode, signature...",
 			                     "Please wait!", true,false);	
@@ -83,32 +74,26 @@ public class GenQR extends Activity implements Runnable,View.OnClickListener
 	}
 
 	@Override
-	public void run()
-	{	
-		try
-		{
+	public void run() {
+		try {
 			QR.generateQRCode(f);	
 			handler.sendEmptyMessage(0);
 		}
-		catch(Exception e)
-		{			
+		catch(Exception e) {
 			except=e;
 			handler.sendEmptyMessage(1);
 		}
 			
 	}
-	private static Handler handler = new Handler()
-	{
+	private static Handler handler = new Handler() {
         @Override
-		public void handleMessage(Message msg)
-         	{
+		public void handleMessage(Message msg) {
          		dialog.dismiss();
          		if(msg.what==1)
-         			Log.create_log(except, dialog.getContext());
+         			Log.createLog(except, dialog.getContext());
 				tv.setText(QR.str);
          		QR.str="";
          	}
-         	
  	};	
 }
 

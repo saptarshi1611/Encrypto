@@ -18,8 +18,7 @@ import android.util.Base64;
  * Creates the QRCode image, digital signature and the public key
  * @since 1.0
  */
- public class QR
-{
+ public class QR {
 	public static String str="";
 
 	/**
@@ -27,16 +26,14 @@ import android.util.Base64;
 	 * @param dataPath Path to input data
 	 * @throws Exception
 	 */
-	public static void generateQRCode(String dataPath) throws Exception
-	{	    
-			String data =read_from_file(dataPath);
+	public static void generateQRCode(String dataPath) throws Exception {
+			String data =readFromFile(dataPath);
 		    QRCodeWriter writer = new QRCodeWriter();
 			String genqr=QRCode.filePath+"/QRCode.png";
 			int img_size=400;		
 			BitMatrix bm = writer.encode(data, BarcodeFormat.QR_CODE,img_size,img_size);
 			Bitmap bmp = Bitmap.createBitmap(img_size,img_size,Bitmap.Config.ARGB_8888); 		
-			if (bmp != null) 
-			{
+			if (bmp != null) {
 				File f=new File(genqr);
 			    if(f.exists())
 			    	f.delete();
@@ -48,8 +45,9 @@ import android.util.Base64;
 			    str+="\nQRCode img: "+genqr;		    		    
 			    gqr.close();
 			}
-			else
+			else {
 				throw new WriterException("QRCode generation failed!");
+			}
 
 	}
 
@@ -58,16 +56,14 @@ import android.util.Base64;
 	 * @return {@link Base64} encoded String
 	 * @throws Exception
 	 */
-	public static String read_from_file(String s) throws Exception
-	{		
+	private static String readFromFile(String s) throws Exception {
 		String ext=s.substring(s.lastIndexOf('.')+1,s.length());
 		boolean flag=false;
 		File file=new File(s);
 		if(ext.equalsIgnoreCase("jpg") || ext.equalsIgnoreCase("png") ||
-												ext.equalsIgnoreCase("jpeg") && file.length()>1500)
-		{
+												ext.equalsIgnoreCase("jpeg") && file.length()>1500) {
 			//if input file is an image of size>~1.5KB convert it to black and white
-			s=ImgtoBW.toBW(s);
+			s= ImageToBW.toBW(s);
 			flag=true;			
 		}
 		file=new File(s);
@@ -75,7 +71,7 @@ import android.util.Base64;
 		byte[] data=new byte[fp.available()];
 		fp.read(data); //store data read from input file in a string
 		fp.close();
-		GenSig.Gen_sig(s);	//Generate digital signature and public key		
+		GenSig.genSig(s);	//Generate digital signature and public key
 		if(flag)
 			str+="\nB&W image: "+s;
 		s = Base64.encodeToString(data, Base64.DEFAULT);

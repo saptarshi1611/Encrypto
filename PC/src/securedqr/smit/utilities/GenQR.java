@@ -9,15 +9,15 @@ import com.oracle.GenSig;
 * <p>
 * Uses
 * <p>
-* {@link edu.sxccal.utilities.ImgtoBlackandWhite} if input file is an image
+* {@link securedqr.smit.utilities.ImgtoBlackandWhite} if input file is an image
 * <p>
 * {@link com.oracle.GenSig} to generate 'sig', 'suepk' files
 * <p>
-* {@link edu.sxccal.utilities.ZipCreator} to create result.zip containing 'sig','suepk' and input file
+* {@link securedqr.smit.utilities.ZipCreator} to create result.zip containing 'sig','suepk' and input file
 * <p>
-* {@link edu.sxccal.utilities.QRCode} to generate QRCode.png from result.zip
+* {@link securedqr.smit.utilities.QRCode} to generate QRCode.png from result.zip
 * <p>
-* {@link edu.sxccal.utilities.Log} to create Log.txt in case of any Exception thrown
+* {@link securedqr.smit.utilities.Log} to create Log.txt in case of any Exception thrown
 * @since 1.0
 */
 public class GenQR {

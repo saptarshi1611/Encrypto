@@ -22,14 +22,12 @@ import org.spongycastle.jce.provider.BouncyCastleProvider;
  * Creates 'sig' and 'suepk' files
  * @since 1.0
  */
-public class GenSig
-{
+public class GenSig {
     /**
      * @param file Input file
      * @throws Exception
      */
-    public static void Gen_sig(String file) throws Exception
-    {
+    public static void genSig(String file) throws Exception {
     	FileInputStream fis = new FileInputStream(file);
         Security.insertProviderAt(new BouncyCastleProvider(),1);
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA", "SC");
@@ -43,8 +41,7 @@ public class GenSig
         BufferedInputStream bufin = new BufferedInputStream(fis);
         byte[] buffer = new byte[keysize];
         int len;
-        while (bufin.available() != 0)
-        {
+        while (bufin.available() != 0) {
         	len = bufin.read(buffer);
             rsa.update(buffer, 0, len);
         }

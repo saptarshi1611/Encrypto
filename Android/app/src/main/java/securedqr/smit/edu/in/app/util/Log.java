@@ -11,17 +11,14 @@ import android.widget.Toast;
 /**
  * Generate Log file and raise {@link Toast}
  */
-public class Log
-{
+public class Log {
 	/**
 	 * Appends exception messages to Log.txt
 	 * @param e Exception object
 	 * @param context Defines the activity context where the Toast will be displayed
 	 */
-	public static void create_log(Exception e, Context context)
-	{		
-		try
-		 {		 
+	public static void createLog(Exception e, Context context) {
+		try {
 			 String log=QRCode.filePath+"/log.txt"; //create log file
 			 String s="Oops!\nErrors have been detected\nCheck: "+log;			 
 			 Toast toast = Toast.makeText(context,s,Toast.LENGTH_SHORT);

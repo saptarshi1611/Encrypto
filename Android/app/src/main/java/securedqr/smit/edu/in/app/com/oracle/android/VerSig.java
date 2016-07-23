@@ -18,8 +18,7 @@ import org.spongycastle.jce.provider.BouncyCastleProvider;
  * Verifies input file
  * @since 1.0
  */
- public class VerSig
-{
+ public class VerSig {
 	/**
 	 *
 	 * @param args Input files where
@@ -30,8 +29,7 @@ import org.spongycastle.jce.provider.BouncyCastleProvider;
 	 * </p>
 	 * @throws Exception
 	 */
-	public static void verify(String args[]) throws Exception
-    {    	
+	public static void verify(String args[]) throws Exception {
     	FileInputStream keyfis = new FileInputStream(args[0]);
 		byte[] encKey = new byte[keyfis.available()];  
 		keyfis.read(encKey);
@@ -50,8 +48,7 @@ import org.spongycastle.jce.provider.BouncyCastleProvider;
 		BufferedInputStream bufin = new BufferedInputStream(datafis);
 		byte[] buffer = new byte[3072];
 		int len;
-		while (bufin.available() != 0)
-		{
+		while (bufin.available() != 0) {
 			len = bufin.read(buffer);
 		    sig.update(buffer, 0, len);
 		}

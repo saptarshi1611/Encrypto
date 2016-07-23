@@ -13,8 +13,7 @@ import java.util.zip.ZipInputStream;
  * Extracts zip file
  * @since 1.0
  */
- public class Unzip
-{    
+ public class Unzip {
     private static final int BUFFER_SIZE = 4096;
 
 	/**
@@ -24,27 +23,24 @@ import java.util.zip.ZipInputStream;
 	 * @return array of Strings containing filepaths of the extracted files
 	 * @throws IOException
 	 */
-    public static String[] unzip(String zipFilePath, String destDirectory) throws IOException
-    {    	
+    public static String[] unzip(String zipFilePath, String destDirectory) throws IOException {
     	String f1=destDirectory + "/suepk";
     	String f2=destDirectory + "/sig";
     	String f3="";
     	ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath));
 	    ZipEntry entry = zipIn.getNextEntry();    	        
-	    while (entry != null) 
-	    {
+	    while (entry != null) {
 	    	String ent=entry.getName(),filePath = destDirectory + "/" + ent;
 	        boolean flag=true;
-	        if(ent.equals("suepk") || ent.equals("sig"))
-	        	flag=false;
-	        if (!entry.isDirectory()) 
-	        {                
+	        if(ent.equals("suepk") || ent.equals("sig")) {
+				flag = false;
+			}
+	        if (!entry.isDirectory()) {
 	        	if(flag)	             
 	        		f3=filePath;	               
 	            extractFile(zipIn, filePath);
 	        } 
-	        else 
-	        {                
+	        else {
 	        	File dir = new File(filePath);
 	            dir.mkdir();
 	        }
@@ -55,13 +51,11 @@ import java.util.zip.ZipInputStream;
     	String files[]={f1,f2,f3};    	
         return files;
     }    
-    private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException
-    {
+    private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
         byte[] bytesIn = new byte[BUFFER_SIZE];
         int read = 0;
-        while ((read = zipIn.read(bytesIn)) != -1)
-        {
+        while ((read = zipIn.read(bytesIn)) != -1) {
             bos.write(bytesIn, 0, read);
         }
         bos.close();

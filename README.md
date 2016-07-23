@@ -1,7 +1,7 @@
 # Encrypto
 Public key crypto-system (RSA) for digital signature verification
 
-/*** Final year college project ***/
+                                    /***   Final year college project   ***/
 
 PC Requirements
 

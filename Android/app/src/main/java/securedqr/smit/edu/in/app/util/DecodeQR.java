@@ -28,13 +28,13 @@ import securedqr.smit.edu.in.app.R;
  * @since 1.0
  */
 
-public class DecodeQR extends Activity implements View.OnClickListener
-{	
+public class DecodeQR extends Activity implements View.OnClickListener {
 	private Button bt;
 	public static TextView tv;
 	private final int PICKFILE_RESULT_CODE = 1;
-	protected void onCreate(Bundle savedInstanceState)
-	{
+
+    @Override
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);	
 		setContentView(R.layout.activity_decode_qr);
 		bt=(Button)findViewById(R.id.edqr);
@@ -42,30 +42,24 @@ public class DecodeQR extends Activity implements View.OnClickListener
 	}
 
 	@Override
-	public void onClick(View v)
-	{
+	public void onClick(View v)	{
 		Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
         fileintent.setType("file/*");
-        try 
-        {
+        try {
             startActivityForResult(fileintent,PICKFILE_RESULT_CODE);            
         } 
-        catch (Exception e) 
-        {
-            Log.create_log(e, getApplicationContext());
+        catch (Exception e) {
+            Log.createLog(e, getApplicationContext());
         }	
 	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{		  
-		  switch(requestCode)
-		  {
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		  switch(requestCode) {
 			  case PICKFILE_RESULT_CODE:
-			   if(resultCode==RESULT_OK)
-			   {
+			   if(resultCode==RESULT_OK) {
 				    String f = data.getData().getPath();
-				    decode_qr(f);
+				    decodeQR(f);
 			   }
 			   break;
 		  }
@@ -75,10 +69,8 @@ public class DecodeQR extends Activity implements View.OnClickListener
 	 * Writes decoded message to Decoded.txt
 	 * @param f Input QRCode image
 	 */
-	public void decode_qr(String f)
-	{
-		try
-		{			
+	private void decodeQR(String f) {
+		try {
 			tv= (TextView)findViewById(R.id.dqr);
 			tv.setText("");
 			Bitmap bmp=BitmapFactory.decodeFile(f); //import QRCode image file
@@ -86,17 +78,14 @@ public class DecodeQR extends Activity implements View.OnClickListener
 	        int[] pixels = new int[width * height];
 	        bmp.getPixels(pixels, 0, width, 0, 0, width, height);
 	        bmp.recycle();
-		 	bmp = null;
-	        RGBLuminanceSource source = new RGBLuminanceSource(width, height, pixels); 
+		 	RGBLuminanceSource source = new RGBLuminanceSource(width, height, pixels);
 	        BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));	       
 			Result qr_result = new QRCodeReader().decode(bitmap);
 			tv.setText("Successfully Decoded!\n");
 			tv.append("Decoded file is at:\n");
-			write_to_file(qr_result.getText().toString());
-		}
-		catch(Exception e)
-		{
-			Log.create_log(e, getApplicationContext());
+			writeToFile(qr_result.getText().toString());
+		}catch(Exception e) {
+			Log.createLog(e, getApplicationContext());
 		}
 	}
 
@@ -105,12 +94,12 @@ public class DecodeQR extends Activity implements View.OnClickListener
 	 * @param s Decoded string
 	 * @throws IOException
 	 */
-	public void write_to_file(String s) throws IOException
-	{
+	private void writeToFile(String s) throws IOException {
 		String dfile=QRCode.filePath+"/Decoded";
 		File dir=new File(dfile);
-		if(!dir.exists())
-			dir.mkdir();
+		if(!dir.exists()) {
+            dir.mkdir();
+        }
 		dfile+="/decoded.txt";
 		File file=new File(dfile);
 		FileOutputStream fp=new FileOutputStream(file);
