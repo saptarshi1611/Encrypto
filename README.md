@@ -3,7 +3,7 @@ Public key crypto-system (RSA) for digital signature verification
 
                                     /***   Final year college project   ***/
 
-PC Requirements
+# PC Requirements
 
   -> JDK 1.7 or above
 
@@ -11,9 +11,9 @@ PC Requirements
 
   -> Linux
 
-Android Requirements
+# Android Requirements
 
-  -> APK 17 or above
+  -> API 17 or above
 
   ->BarcodeScanner app by zxing ( https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en )
 
